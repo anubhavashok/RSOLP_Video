@@ -1,0 +1,116 @@
+# Main Scene File
+
+Renderer "sampler"
+
+Sampler "metropolis"
+	"float largemutationprob" [0.400000005960464]
+	"bool noiseaware" ["false"]
+
+Accelerator "qbvh"
+
+SurfaceIntegrator "bidirectional"
+	"integer eyedepth" [16]
+	"integer lightdepth" [16]
+	"integer lightraycount" [1]
+	"string lightpathstrategy" ["auto"]
+	"string lightstrategy" ["auto"]
+
+VolumeIntegrator "multi"
+
+PixelFilter "blackmanharris"
+	"float xwidth" [2.000000000000000]
+	"float ywidth" [2.000000000000000]
+
+LookAt 0.000000 0.000000 0.000000 -0.000000 1.000000 0.000022 0.008667 -0.000022 0.999962
+
+Camera "perspective"
+	"float fov" [69.639939418911354]
+	"float screenwindow" [-0.998349773464724 1.001650226535276 -0.809604883193970 1.190395116806030]
+	"bool autofocus" ["false"]
+	"float shutteropen" [0.000000000000000]
+	"float shutterclose" [0.041666666666667]
+	"float hither" [5.996368885040283]
+	"float yon" [1000.000000000000000]
+
+Film "fleximage"
+	"integer xresolution" [512]
+	"integer yresolution" [512]
+	"float gamma" [2.200000000000000]
+	"float colorspace_white" [0.314275000000000 0.329411000000000]
+	"float colorspace_red" [0.630000000000000 0.340000000000000]
+	"float colorspace_green" [0.310000000000000 0.595000000000000]
+	"float colorspace_blue" [0.155000000000000 0.070000000000000]
+	"string filename" ["cbox.Scene.00000"]
+	"bool write_resume_flm" ["false"]
+	"bool restart_resume_flm" ["false"]
+	"bool write_flm_direct" ["false"]
+	"bool write_exr_halftype" ["false"]
+	"bool write_exr_applyimaging" ["true"]
+	"bool write_exr_ZBuf" ["false"]
+	"string write_exr_compressiontype" ["PIZ (lossless)"]
+	"string write_exr_zbuf_normalizationtype" ["None"]
+	"bool write_exr" ["false"]
+	"string write_exr_channels" ["RGB"]
+	"bool write_png" ["true"]
+	"string write_png_channels" ["RGB"]
+	"bool write_png_16bit" ["false"]
+	"bool write_tga" ["false"]
+	"string write_tga_channels" ["RGB"]
+	"string ldr_clamp_method" ["cut"]
+	"integer displayinterval" [10]
+	"integer writeinterval" [180]
+	"integer flmwriteinterval" [900]
+	"integer outlierrejection_k" [2]
+	"integer tilecount" [0]
+	"string tonemapkernel" ["linear"]
+	"float linear_sensitivity" [320.000000000000000]
+	"float linear_exposure" [0.041666666666667]
+	"float linear_fstop" [2.799999952316284]
+	"float linear_gamma" [2.200000000000000]
+
+WorldBegin
+
+Include "cbox/Scene/00000/LuxRender-Materials.lxm"
+
+Include "cbox/Scene/00000/LuxRender-Geometry.lxo"
+
+AttributeBegin #  "Point"
+
+Transform [1.000000000000000 0.000000000000000 0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000 0.000000000000000 0.000000000000000 0.000000000000000 0.000000000000000 1.000000000000000 0.000000000000000 -0.190694928169250 10.361007690429688 5.152116775512695 1.000000000000000]
+
+LightGroup "default"
+
+NamedMaterial "Point"
+
+AreaLightSource "area"
+	"float importance" [1.000000000000000]
+	"float power" [100.000000000000000]
+	"float efficacy" [17.000000000000000]
+	"color L" [1.00000000 1.00000000 1.00000000]
+	"integer nsamples" [1]
+	"float gain" [5.010000228881836]
+
+Shape "trianglemesh"
+	"integer indices" [0 1 2 0 2 3]
+	"point P" [-0.050000000745058 0.050000000745058 0.000000000000000 0.050000000745058 0.050000000745058 0.000000000000000 0.050000000745058 -0.050000000745058 0.000000000000000 -0.050000000745058 -0.050000000745058 0.000000000000000]
+	"string name" ["Point"]
+
+AttributeEnd # ""
+
+TransformBegin #  "Lamp"
+
+Transform [-0.290864646434784 0.955171167850494 -0.055189058184624 0.000000000000000 -0.771100819110870 -0.199883356690407 0.604524731636047 0.000000000000000 0.566393196582794 0.218391194939613 0.794672250747681 0.000000000000000 4.076245307922363 1.005453944206238 5.903861999511719 1.000000000000000]
+
+LightGroup "default"
+
+LightSource "point"
+	"float gain" [1.000000000000000]
+	"float importance" [1.000000000000000]
+	"color L" [1.00000000 1.00000000 1.00000000]
+	"bool flipz" ["true"]
+	"float power" [0.000000000000000]
+	"float efficacy" [0.000000000000000]
+	"point from" [0.000000000000000 0.000000000000000 0.000000000000000]
+
+TransformEnd # ""
+WorldEnd

@@ -1,0 +1,11 @@
+syntax: glob
+
+.DS_Store
+img/room.jpg
+img/room2.jpg
+img/room3.jpg
+*.pyc
+*.db
+*.swp
+src/media
+settings.py

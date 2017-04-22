@@ -1,0 +1,304 @@
+# Materials File
+
+Texture "sceneTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/cbox-reflectance.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "sceneMat"
+	"texture Kd" ["sceneTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "light3Mat"
+	"color Kd" [0.63999999 0.63999999 0.63999999]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "light2Mat"
+	"color Kd" [0.63999999 0.63999999 0.63999999]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "light1Mat"
+	"color Kd" [0.63999999 0.63999999 0.63999999]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+Texture "backTexTransp_float" "float" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/backTransp.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+Texture "backTexTransp_float_alpha" "float" "mix"
+	"float tex1" [1.000000000000000]
+	"float tex2" [0.000000000000000]
+	"texture amount" ["backTexTransp_float"]
+
+Texture "backTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/back.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "backMat_null"
+	"string type" ["null"]
+
+MakeNamedMaterial "backMat_mat"
+	"texture Kd" ["backTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "backMat"
+	"string namedmaterial1" ["backMat_null"]
+	"string namedmaterial2" ["backMat_mat"]
+	"texture amount" ["backTexTransp_float_alpha"]
+	"string type" ["mix"]
+
+Texture "botTexTransp_float" "float" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/botTransp.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+Texture "botTexTransp_float_alpha" "float" "mix"
+	"float tex1" [1.000000000000000]
+	"float tex2" [0.000000000000000]
+	"texture amount" ["botTexTransp_float"]
+
+Texture "botTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/bot.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "botMat_null"
+	"string type" ["null"]
+
+MakeNamedMaterial "botMat_mat"
+	"texture Kd" ["botTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "botMat"
+	"string namedmaterial1" ["botMat_null"]
+	"string namedmaterial2" ["botMat_mat"]
+	"texture amount" ["botTexTransp_float_alpha"]
+	"string type" ["mix"]
+
+Texture "rightTexTransp_float" "float" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/rightTransp.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+Texture "rightTexTransp_float_alpha" "float" "mix"
+	"float tex1" [1.000000000000000]
+	"float tex2" [0.000000000000000]
+	"texture amount" ["rightTexTransp_float"]
+
+Texture "rightTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/right.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "rightMat_null"
+	"string type" ["null"]
+
+MakeNamedMaterial "rightMat_mat"
+	"texture Kd" ["rightTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "rightMat"
+	"string namedmaterial1" ["rightMat_null"]
+	"string namedmaterial2" ["rightMat_mat"]
+	"texture amount" ["rightTexTransp_float_alpha"]
+	"string type" ["mix"]
+
+Texture "topTexTransp_float" "float" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/topTransp.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+Texture "topTexTransp_float_alpha" "float" "mix"
+	"float tex1" [1.000000000000000]
+	"float tex2" [0.000000000000000]
+	"texture amount" ["topTexTransp_float"]
+
+Texture "topTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/top.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "topMat_null"
+	"string type" ["null"]
+
+MakeNamedMaterial "topMat_mat"
+	"texture Kd" ["topTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "topMat"
+	"string namedmaterial1" ["topMat_null"]
+	"string namedmaterial2" ["topMat_mat"]
+	"texture amount" ["topTexTransp_float_alpha"]
+	"string type" ["mix"]
+
+Texture "leftTexTransp_float" "float" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/leftTransp.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+Texture "leftTexTransp_float_alpha" "float" "mix"
+	"float tex1" [1.000000000000000]
+	"float tex2" [0.000000000000000]
+	"texture amount" ["leftTexTransp_float"]
+
+Texture "leftTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/left.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "leftMat_null"
+	"string type" ["null"]
+
+MakeNamedMaterial "leftMat_mat"
+	"texture Kd" ["leftTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "leftMat"
+	"string namedmaterial1" ["leftMat_null"]
+	"string namedmaterial2" ["leftMat_mat"]
+	"texture amount" ["leftTexTransp_float_alpha"]
+	"string type" ["mix"]
+
+Texture "midTexTransp_float" "float" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/midTransp.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+Texture "midTexTransp_float_alpha" "float" "mix"
+	"float tex1" [1.000000000000000]
+	"float tex2" [0.000000000000000]
+	"texture amount" ["midTexTransp_float"]
+
+Texture "midTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Downloads/RSOLP_Annotator_Source/example/cornell_box/textures/mid.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "midMat_null"
+	"string type" ["null"]
+
+MakeNamedMaterial "midMat_mat"
+	"texture Kd" ["midTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "midMat"
+	"string namedmaterial1" ["midMat_null"]
+	"string namedmaterial2" ["midMat_mat"]
+	"texture amount" ["midTexTransp_float_alpha"]
+	"string type" ["mix"]
