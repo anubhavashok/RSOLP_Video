@@ -4,6 +4,7 @@
  */
 function kCanvas(canvas){
 	this.canvas = canvas;
+        console.log(canvas)
 	this.painters = new Array();
 }
 

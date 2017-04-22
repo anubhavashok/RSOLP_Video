@@ -1,3 +1,5 @@
+room = './static/img/room.jpg'
+room = './img/room.jpg'
 $(document).ready(function(){
     if(room === undefined){
         alert("Image not loaded.");
