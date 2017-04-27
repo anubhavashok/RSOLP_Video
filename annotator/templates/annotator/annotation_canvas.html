@@ -147,7 +147,7 @@
 			<!-- Results -->
 			<div id="tabs-result">
 				<p>
-                    <form id="annotation-canvas-form" action="{% url 'annotation_submitted' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <form id="annotation-canvas-form" action="{% url "annotation_canvas_submit_view" %}" method="post" enctype="multipart/form-data">{% csrf_token %}
                         {{ form.as_p }}
                         <input type="submit" value="Submit" />
                     </form>

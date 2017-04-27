@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""annotator URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.generic import TemplateView
+from django.conf.urls.static import static
+from django.conf import settings
 import views
 
 urlpatterns = [
+    #url(r'^annotator/', TemplateView.as_view(template_name='./annotator/annotation_canvas.html')),
+    url(r'^annotator/', views.annotation_canvas),
+    url(r'^annotation_canvas_submit_view/', TemplateView.as_view(template_name='./annotator/annotation_submitted.html'), name='annotation_canvas_submit_view'),
     url(r'^admin/', admin.site.urls),
-    #url(r'^$', views.base, name='base'),
-    url(r'^annotation_create/', views.annotation_create, name='annotation_create'),
-    url(r'^annotation_canvas/', views.annotation_canvas, name='annotation_canvas'),
-    url(r'^annotation_list/', views.annotation_list, name='annotation_list'),
-    url(r'^annotation_submitted/', views.annotation_submitted, name='annotation_submitted'),
-]
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

@@ -12,39 +12,6 @@ function PreviewHandler(kcanvas){
 	this.y_col = "rgba(0,255,0,1)";
 	this.z_col = "rgba(0,0,255,1)";
 	this.anchor = 0;
-this.setBox3D = function(w,h,d, cam_h) {
-	var pad = 4;
-	var canvas_w = this.kcanvas.getWidth()-2*pad;
-	var canvas_h = this.kcanvas.getHeight()-2*pad;
-	
-	var slope = (new Point2D(3,1)).times(1/Math.sqrt(10));
-	var scale = new Point2D(d/w,d/h)
-	var tmp_length = new Point2D((w+slope.x*d)*canvas_h, (h+slope.y*d)*canvas_w);
-	var preview = new Point3D(0,0,0);
-	if(tmp_length.x > tmp_length.y) {
-		preview.x = canvas_w / (slope.x*scale.x+1);
-		preview.z = preview.x * scale.x;
-		preview.y = preview.x * (h/w);
-	} else {
-		preview.y = canvas_h / (slope.y*scale.y+1);
-		preview.z = preview.y * scale.y;
-		preview.x = preview.y * (w/h);
-	}
-	box = new Array(
-					new Point2D(0+pad, preview.y+pad),
-					new Point2D(0+pad, 0+pad),
-					new Point2D(preview.x+pad, 0+pad),
-					new Point2D(preview.x+pad, preview.y+pad),
-					new Point2D(slope.x*preview.z+0+pad, slope.y*preview.z+preview.y+pad),
-					new Point2D(slope.x*preview.z+0+pad, slope.y*preview.z+0+pad),
-					new Point2D(slope.x*preview.z+preview.x+pad, slope.y*preview.z+0+pad),
-					new Point2D(slope.x*preview.z+preview.x+pad, slope.y*preview.z+preview.y+pad)
-				   );
-	this.box_points = box;
-	this.cam_height = cam_h; //Currently unused
-	this.kcanvas.paintAll();
-}
-
 	this.setBox3D(0,0,0,0);
 }
 

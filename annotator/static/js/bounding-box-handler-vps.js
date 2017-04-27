@@ -10,9 +10,9 @@ function BoundingBoxHandler(kcanvas, preview_handler){
 	kCanvasHandler.call(this, kcanvas);
 
 	this.successImg = new Image();
-	this.successImg.src = 'img/success.png';
+	this.successImg.src = '/static/img/success.png';
 	this.failImg = new Image();
-	this.failImg.src = 'img/fail.png';
+	this.failImg.src = '/static/img/fail.png';
 	
 	this.x_col = "rgba(255,0,0,1)";
 	this.y_col = "rgba(0,255,0,1)";
