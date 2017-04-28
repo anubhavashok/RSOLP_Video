@@ -22,8 +22,8 @@ import views
 
 urlpatterns = [
     #url(r'^annotator/', TemplateView.as_view(template_name='./annotator/annotation_canvas.html')),
-    url(r'^annotator/', views.annotation_canvas),
-    url(r'^annotation_canvas_submit_view/', TemplateView.as_view(template_name='./annotator/annotation_submitted.html'), name='annotation_canvas_submit_view'),
+    url(r'^annotator/annotation_canvas/', views.annotation_canvas),
+    url(r'^annotator/annotation_canvas_submit_view/', views.annotation_canvas_submit_view, name='annotation_canvas_submit_view'),
     url(r'^admin/', admin.site.urls),
 ] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

@@ -11,3 +11,7 @@ def annotation_canvas(request):
     #return TemplateView.as_view(template_name='annotator/annotation_canvas.html')
     return render(request, 'annotator/annotation_canvas.html', context)
 
+def annotation_canvas_submit_view(request):
+    context = {}#{'STATIC_URL': settings.STATIC_URL}
+    #return TemplateView.as_view(template_name='annotator/annotation_canvas.html')
+    return render(request, 'annotator/annotation_submitted.html', context)

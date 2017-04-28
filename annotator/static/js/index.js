@@ -53,6 +53,7 @@ $(document).ready(function(){
 		select: function(event, ui){
 			var tab_id = ui.tab.href.split("#")[1];
 			if(tab_id === "tabs-result"){
+                                console.log('selected tabs-result')
 				$('#id_annotation_text').val(aggregateResult());
 			}
 		}
@@ -130,7 +131,7 @@ $(document).ready(function(){
 			output += s.solid + "\n";
 			output += "\n";
 		});
-		
+		console.log(output)
 		return output;
 	}
 });

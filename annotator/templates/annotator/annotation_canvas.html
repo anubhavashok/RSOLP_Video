@@ -146,6 +146,8 @@
 			
 			<!-- Results -->
 			<div id="tabs-result">
+                       <textarea id='id_annotation_text'>
+                       </textarea>
 				<p>
                     <form id="annotation-canvas-form" action="{% url "annotation_canvas_submit_view" %}" method="post" enctype="multipart/form-data">{% csrf_token %}
                         {{ form.as_p }}
