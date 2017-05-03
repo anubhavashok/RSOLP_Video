@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    room = '/static/img/room.png' 
+    room = '/static/img/no_ball.jpg' 
     if(room === undefined){
         alert("Image not loaded.");
     }
@@ -46,6 +46,17 @@ $(document).ready(function(){
 	$('#add-surface-link').click(function(){
 		surface_handler.addSurface();
 	});
+        
+        // Moving object
+        log("Init moving object");
+        var kcanvas_movingobject = new kCanvas($('#canvas-movingobject')[0]);
+        console.log(kcanvas_movingobject)
+        var ball = "/static/img/ball.png" 
+        kcanvas_movingobject.loadImage(ball);
+        var movingobject_handler = new MovingObjectHandler(kcanvas_movingobject);
+        $('#add-movingobject-link').click(function(){
+                movingobject_handler.addMovingObject();
+        });
 	
 	log("Init results");
 	
