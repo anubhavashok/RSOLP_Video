@@ -23,6 +23,8 @@
 	<script type="text/javascript" src="{{ STATIC_URL }}js/light-source-handler.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/light-shaft.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/light-shaft-handler.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/movingobject.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/movingobject-handler.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/surface.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/surface-handler.js"></script>
     <!--[if lt IE 9]>
@@ -42,6 +44,7 @@
 				<li><a href="#tabs-light-sources">Light Sources</a></li>
 				<li><a href="#tabs-light-shafts">Light Shafts</a></li>
 				<li><a href="#tabs-surfaces">Surfaces</a></li>
+				<li><a href="#tabs-movingobject">Moving object</a></li>
 				<li><a href="#tabs-help">Help</a></li>
 				<li><a href="#tabs-result">Result</a></li>
 			</ul>
@@ -137,6 +140,24 @@
 				</div>
 			</div>
 			
+                        <!-- Moving Object-->
+                        <div id="tabs-movingobject">
+                                <div class="twocols-right clearfix">
+                                        <div class="toolbar-wrapper">
+                                                <div id="movingobject-tools">
+                                                        <a class="toolbar-link" id="add-movingobject-link">Add Moving Object</a>
+                                                </div>
+                                                <div id="movingobject-list">
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="twocols-left clearfix">
+                                        <div class="canvas-wrapper"><canvas id="canvas-movingobject" width="800" height="600">
+                                        <p>Your browser does not support HTML5 which is required for this demo.</p>
+                                        </canvas></div>
+                                </div>
+                        </div>
+
 			<!-- Help -->
 			<div id="tabs-help">
 				<p>
