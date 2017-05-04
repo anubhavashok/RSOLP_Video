@@ -1,4 +1,4 @@
-function surfs3d  = getExtrudedSurfaces(surfs, K, R, box3d )
+function surfs3d  = getExtrudedSurfaces(surfs, K, R, box3d)
     surfs3d = cell(numel(surfs),1);
     P = K*R;
     for i=1:numel(surfs)

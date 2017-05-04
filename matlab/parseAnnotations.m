@@ -47,6 +47,10 @@ function scene = parseAnnotations( annotation_file )
         elseif( strcmp(tok,'shaft_2d_source') )
             scene.shaft_2d_source = cell2mat(textscan(fid, '%f %f', 1));
             fgetl(fid); %clear to next line
+        elseif( strcmp(tok,'sphere') )
+            scene.sphere = cell2mat(textscan(fid, '%f %f', 4));
+            display(scene.sphere);
+            fgetl(fid); %clear to next line
         end
         line = fgetl(fid);
     end

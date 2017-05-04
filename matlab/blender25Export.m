@@ -274,6 +274,27 @@ for i=1:numel(scene.surfs3d)
     end
     fprintf(fid, '])\n');
 end
+
+fprintf(fid, '########## Sphere ##########\n');
+fprintf(fid, '#Image as material for extruded objects\n');
+fprintf(fid, 'mat = bpy.data.materials.new(''sceneMat'')\n');
+fprintf(fid, 'mat.use_shadeless = True\n');
+fprintf(fid, 'mat.diffuse_intensity = 1\n');
+fprintf(fid, 'mat.specular_intensity = 0\n');
+fprintf(fid, 'texslot = mat.texture_slots.add()\n');
+fprintf(fid, 'texslot.texture_coords = ''UV''\n');
+fprintf(fid, 'texslot.texture = bpy.data.textures.new(''sceneTex'', ''IMAGE'')\n');
+fprintf(fid, 'texslot.texture.image = bpy.data.images.load(''//textures/%s-reflectance.png'')\n', scene.name);
+fprintf(fid, 'texslot.texture.luxrender_texture.type_label = ''Use Blender Texture''\n');
+fprintf(fid, 'mat.luxrender_material.luxrender_mat_matte.Kd_usecolortexture = True\n');
+fprintf(fid, 'mat.luxrender_material.luxrender_mat_matte.Kd_colortexturename = texslot.texture.name\n');
+fprintf(fid, '\n');
+
+fprintf(fid, 'name = ''sphere%d''\n', 1);
+fprintf(fid, 'ob = bpy.ops.mesh.primitive_uv_sphere_add(segments=100, ring_count=100, size=0.5, location=(%f, %f, %f))', x, y, z);
+fprintf(fid, 'bpy.context.scene.objects.link(ob)\n');
+fprintf(fid, 'ob.parent = root\n');
+
 fprintf(fid, 'bpy.context.scene.update()\n');
 
 %Save to file

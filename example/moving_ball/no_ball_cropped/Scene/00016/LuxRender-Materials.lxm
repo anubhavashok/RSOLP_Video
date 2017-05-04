@@ -1,0 +1,74 @@
+# Materials File
+
+Texture "sceneTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Desktop/16823/Project/RSOLP_Video/example/moving_ball/textures/no_ball_cropped-reflectance.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "sceneMat"
+	"texture Kd" ["sceneTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "light2Mat"
+	"color Kd" [0.63999999 0.63999999 0.63999999]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "light1Mat"
+	"color Kd" [0.63999999 0.63999999 0.63999999]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+Texture "backTexTransp_float" "float" "imagemap"
+	"string filename" ["/Users/anubhav/Desktop/16823/Project/RSOLP_Video/example/moving_ball/textures/backTransp.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+Texture "backTexTransp_float_alpha" "float" "mix"
+	"float tex1" [1.000000000000000]
+	"float tex2" [0.000000000000000]
+	"texture amount" ["backTexTransp_float"]
+
+Texture "backTex_color" "color" "imagemap"
+	"string filename" ["/Users/anubhav/Desktop/16823/Project/RSOLP_Video/example/moving_ball/textures/back.png"]
+	"integer discardmipmaps" [0]
+	"float gain" [1.000000000000000]
+	"float gamma" [2.200000047683716]
+	"float maxanisotropy" [8.000000000000000]
+	"string wrap" ["repeat"]
+	"string mapping" ["uv"]
+	"float uscale" [1.000000000000000]
+	"float vscale" [-1.000000000000000]
+	"float udelta" [0.000000000000000]
+	"float vdelta" [1.000000000000000]
+
+MakeNamedMaterial "backMat_null"
+	"string type" ["null"]
+
+MakeNamedMaterial "backMat_mat"
+	"texture Kd" ["backTex_color"]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "backMat"
+	"string namedmaterial1" ["backMat_null"]
+	"string namedmaterial2" ["backMat_mat"]
+	"texture amount" ["backTexTransp_float_alpha"]
+	"string type" ["mix"]
