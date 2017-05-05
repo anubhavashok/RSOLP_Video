@@ -84,7 +84,7 @@ for i in range(len(locations)):
 '''
 obj.location.x = -2.51091
 obj.location.y = -22.20513
-obj.location.z = -3.13994
+obj.location.z = -3.42994
 
 obj.keyframe_insert(data_path='location', frame=1)
 

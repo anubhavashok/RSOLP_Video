@@ -289,9 +289,9 @@ fprintf(fid, 'texslot.texture.luxrender_texture.type_label = ''Use Blender Textu
 fprintf(fid, 'mat.luxrender_material.luxrender_mat_matte.Kd_usecolortexture = True\n');
 fprintf(fid, 'mat.luxrender_material.luxrender_mat_matte.Kd_colortexturename = texslot.texture.name\n');
 fprintf(fid, '\n');
-
+a = mean(scene.sphere, 1);
 fprintf(fid, 'name = ''sphere%d''\n', 1);
-fprintf(fid, 'ob = bpy.ops.mesh.primitive_uv_sphere_add(segments=100, ring_count=100, size=0.5, location=(%f, %f, %f))', x, y, z);
+fprintf(fid, 'ob = bpy.ops.mesh.primitive_uv_sphere_add(segments=100, ring_count=100, size=0.5, location=(%f, %f, %f))', a(1), a(2), 0.0);
 fprintf(fid, 'bpy.context.scene.objects.link(ob)\n');
 fprintf(fid, 'ob.parent = root\n');
 

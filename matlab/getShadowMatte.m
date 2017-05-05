@@ -1,6 +1,6 @@
 function [matte, dir] = getShadowMatte( img, box, box3d, shafts, shaft_angle, ...
                                         shaft_2d_source, K, R)   
-    CLEANEDSRC_SHADOW2_DIR = '/Users/anubhav/Desktop/16823/Project/RSOLP_Video/matlab/cleanedsrc_shadow2';
+    CLEANEDSRC_SHADOW2_DIR = '/srv/rsolp/rsolp/src/matlab/cleanedsrc_shadow2/';
     %Get 3D shaft direction
     if(numel(shafts)==0)
         dir=[];

@@ -1,5 +1,25 @@
 # Materials File
 
+MakeNamedMaterial "Material.004"
+	"float uroughness" [0.075000002980232]
+	"float vroughness" [0.075000002980232]
+	"string name" ["aluminium"]
+	"string type" ["metal"]
+
+MakeNamedMaterial "Material.003_base"
+	"color Kd" [0.07282221 0.46281916 0.63999999]
+	"float sigma" [0.000000000000000]
+	"string type" ["matte"]
+
+MakeNamedMaterial "Material.003"
+	"bool multibounce" ["false"]
+	"color Ks" [0.04000000 0.04000000 0.04000000]
+	"float index" [0.000000000000000]
+	"float uroughness" [0.075000002980232]
+	"float vroughness" [0.075000002980232]
+	"string basematerial" ["Material.003_base"]
+	"string type" ["glossycoating"]
+
 Texture "sceneTex_color" "color" "imagemap"
 	"string filename" ["/Users/anubhav/Desktop/16823/Project/RSOLP_Video/example/moving_ball/textures/no_ball_cropped-reflectance.png"]
 	"integer discardmipmaps" [0]
@@ -72,11 +92,6 @@ MakeNamedMaterial "backMat"
 	"string namedmaterial2" ["backMat_mat"]
 	"texture amount" ["backTexTransp_float_alpha"]
 	"string type" ["mix"]
-
-MakeNamedMaterial "Material.002"
-	"color Kd" [0.63999999 0.63999999 0.63999999]
-	"float sigma" [0.000000000000000]
-	"string type" ["matte"]
 
 Texture "botTexTransp_float" "float" "imagemap"
 	"string filename" ["/Users/anubhav/Desktop/16823/Project/RSOLP_Video/example/moving_ball/textures/botTransp.png"]
@@ -303,7 +318,7 @@ MakeNamedMaterial "midMat"
 	"texture amount" ["midTexTransp_float_alpha"]
 	"string type" ["mix"]
 
-MakeNamedMaterial "Material"
+MakeNamedMaterial "light1Mat.001"
 	"color Kd" [0.63999999 0.63999999 0.63999999]
 	"float sigma" [0.000000000000000]
 	"string type" ["matte"]
